@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjektiSMS.Models.Seller>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/UserPanel/Views/Shared/User_Layout.cshtml";
+}
+<h2>Shitjet </h2>
+<p style="text-align:right">
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<style>
+    li:hover {
+        background-color: lightgray;
+    }
+</style>
+
+
+
+<ul class="list-group">
+    @foreach (var item in Model)
+    {
+
+    <li class="list-group-item">
+        <h4> @item.timeSeller </h4> <br />
+        Produkti : @item.product.Image  <br />
+        Produkti : @item.product.Name  <br />
+        Cmimi : @item.price_sell  <br />
+
+
+        (<a asp-action="Edit" asp-route-id="@item.Id">Edit</a>)
+        (<a asp-action="Details" asp-route-id="@item.Id">Details</a>)
+        (<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>)
+
+
+
+
+
+    </li>
+
+
+    }
+
+</ul>
+
+

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ProjektiSMS.Models.Seller>
+    @{
+        ViewData["Title"] = "BestAsync";
+    }
+
+    <h1>BestAsync</h1>
+
+
+    @foreach (var item in Model)
+    {
+
+        <div>
+            ID @item.Id;
+            NAME    @item.product.Name;
+            Quantity    @item.quantity;
+        </div>
+
+    }

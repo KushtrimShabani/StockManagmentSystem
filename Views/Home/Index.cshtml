@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p> Please login with your account</p>
+    
+
+    <div class="row">
+
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+            <div class="card">
+                <a asp-area="AdminPanel" asp-controller="Home" asp-action="Index">
+                    <div class="card-body">
+                        <i style="font-size:30px" class="fa fa-user-cog"></i>
+                        <h5>Admin</h5>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <a asp-area="" asp-controller="Products" asp-action="Index">
+                    <div class="card-body">
+                        <i style="font-size:30px" class="fas fa-user"></i>
+                        <h5>User</h5>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

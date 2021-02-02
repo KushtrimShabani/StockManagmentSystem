@@ -1,0 +1,70 @@
+﻿@model ProjektiSMS.Models.Seller
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/UserPanel/Views/Shared/User_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Seller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="price_sell" class="control-label"></label>
+                <input asp-for="price_sell" class="form-control" />
+                <span asp-validation-for="price_sell" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="quantity" class="control-label"></label>
+                <input asp-for="quantity" class="form-control" />
+                <span asp-validation-for="quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="timeSeller" class="control-label"></label>
+                <input asp-for="timeSeller" class="form-control" />
+                <span asp-validation-for="timeSeller" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="productID" class="control-label"></label>
+                <select asp-for="productID" class="form-control" asp-items="ViewBag.productID"></select>
+                <span asp-validation-for="productID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateBy" class="control-label"></label>
+                <input disabled asp-for="CreateBy" class="form-control" />
+                <span asp-validation-for="CreateBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateData" class="control-label"></label>
+                <input disabled asp-for="CreateData" class="form-control" />
+                <span asp-validation-for="CreateData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdateBy" class="control-label"></label>
+                <input disabled asp-for="UpdateBy" class="form-control" />
+                <span asp-validation-for="UpdateBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdateData" class="control-label"></label>
+                <input disabled asp-for="UpdateData" class="form-control" />
+                <span asp-validation-for="UpdateData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

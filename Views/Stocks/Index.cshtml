@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ProjektiSMS.Models.Stock>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/UserPanel/Views/Shared/User_Layout.cshtml";
+}
+
+<h2>Stock</h2>
+
+<p style="text-align:right">
+    <a asp-action="Create">Create New</a>
+</p>
+
+        <style>
+            li:hover {
+                background-color: lightgray;
+            }
+        </style>
+        <form action="" method="get">
+            <input type="text" name="searchString" />
+            <input type="submit" value="Search" />
+
+        </form>
+
+
+        <ul class="list-group">
+            @foreach (var item in Model)
+            {
+
+                <li class="list-group-item">
+                    <h4> @item.Name </h4>  (<a asp-action="Edit" asp-route-id="@item.Id">Edit</a>)
+                    (<a asp-action="Details" asp-route-id="@item.Id">Details</a>)
+                    (<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>)<br />
+
+                    Cmimi : @item.Price_sell  <br />
+                    Sasia : @item.Quantity  <br />
+                    Producti : @item.product.Name
+                    <br>
+                    <img src="@item.Image" style="width:100px;" alt="Alternate Text" />
+
+
+                </li>
+
+
+            }
+
+        </ul>
+
+    </tbody>
+</table>
